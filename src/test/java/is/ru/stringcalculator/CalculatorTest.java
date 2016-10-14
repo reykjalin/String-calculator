@@ -40,4 +40,9 @@ public class CalculatorTest {
         thrown.expectMessage("Negatives not allowed: -1,-3");
         Calculator.add("1,-1\n-3");
     }
+
+    @Test
+    public void thousandTest() throws Exception {
+        assertEquals(3, Calculator.add("1,2,1001"));
+    }
 }

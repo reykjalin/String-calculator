@@ -21,7 +21,8 @@ public class Calculator {
     private static int sum(String[] nums){
         int sum = 0;
         for(int i = 0; i < nums.length; i++)
-            sum += toInt(nums[i]);
+            if(toInt(nums[i]) <= 1000)
+                sum += toInt(nums[i]);
         return sum;
     }
 

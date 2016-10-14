@@ -8,5 +8,6 @@ import org.junit.rules.ExpectedException;
 public class CalculatorTest {
     @Test
     public void emptyTest(){
+        assertEquals(0, Calculator.add(""));
     }
 }

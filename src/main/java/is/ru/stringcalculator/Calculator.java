@@ -6,18 +6,7 @@ public class Calculator {
             return 0;
 
         String nums[] = splitString(str);
-        boolean first = true;
-        String msg = "";
-        for(int i = 0; i < nums.length; i++){
-            if(toInt(nums[i]) < 0){
-                if(first){
-                    msg += "Negatives not allowed: " + nums[i];
-                    first = false;
-                }
-                else
-                    msg += "," + nums[i];
-            }
-        }
+        String msg = findNeg(nums);
         if(!msg.isEmpty())
             throw new Exception(msg);
         return sum(nums);
@@ -34,5 +23,23 @@ public class Calculator {
         for(int i = 0; i < nums.length; i++)
             sum += toInt(nums[i]);
         return sum;
+    }
+
+    private static boolean isNeg(String str) { return toInt(str) < 0; }
+
+    private static String findNeg(String[] nums){
+        boolean first = true;
+        String msg = "";
+        for(int i = 0; i < nums.length; i++){
+            if(isNeg(nums[i])){
+                if(first){
+                    msg += "Negatives not allowed: " + nums[i];
+                    first = false;
+                }
+                else
+                    msg += "," + nums[i];
+            }
+        }
+        return msg;
     }
 }

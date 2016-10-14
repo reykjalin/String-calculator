@@ -12,7 +12,7 @@ public class Calculator {
     private static int toInt(String str) { return Integer.parseInt(str); }
 
     private static String[] splitString(String str){
-        return str.split(",");
+        return str.split("[,\\n]");
     }
 
     private static int sum(String[] nums){

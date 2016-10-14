@@ -25,4 +25,9 @@ public class CalculatorTest {
     public void multNumTest(){
         assertEquals(45, Calculator.add("1,2,3,4,5,6,7,8,9"));
     }
+
+    @Test
+    public void nlTest(){
+        assertEquals(6, Calculator.add("1,2\n3"));
+    }
 }

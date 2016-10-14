@@ -5,11 +5,10 @@ public class Calculator {
         if(str.isEmpty())
             return 0;
 
-        String delim = "";
-        if(str.startsWith("//")){
-            delim = str.substring(2, str.indexOf("\n"));
-            str = str.substring(str.indexOf("\n") + 1, str.length());
-        }
+        String delim = findDelim(str);
+        if(!delim.isEmpty())
+            str = removeDelim(str);
+
         String nums[] = splitString(str, delim);
         String msg = findNeg(nums);
         if(!msg.isEmpty())
@@ -47,5 +46,16 @@ public class Calculator {
             }
         }
         return msg;
+    }
+
+    private static String findDelim(String str){
+        if(str.startsWith("//")){
+            return str.substring(2, str.indexOf("\n"));
+        }
+        return "";
+    }
+
+    private static String removeDelim(String str){
+            return str.substring(str.indexOf("\n") + 1, str.length());
     }
 }

@@ -5,6 +5,8 @@ public class Calculator {
         if(str.isEmpty())
             return 0;
         else
-            return Integer.parseInt(str);
+            return toInt(str);
     }
+
+    private static int toInt(String str) { return Integer.parseInt(str); }
 }

@@ -5,12 +5,20 @@ public class Calculator {
         if(str.isEmpty())
             return 0;
 
-        String nums[] = str.split(",");
+        String nums[] = splitString(str);
+        return sum(nums);
+    }
+
+    private static int toInt(String str) { return Integer.parseInt(str); }
+
+    private static String[] splitString(String str){
+        return str.split(",");
+    }
+
+    private static int sum(String[] nums){
         int sum = 0;
         for(int i = 0; i < nums.length; i++)
             sum += toInt(nums[i]);
         return sum;
     }
-
-    private static int toInt(String str) { return Integer.parseInt(str); }
 }

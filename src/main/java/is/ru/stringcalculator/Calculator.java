@@ -5,7 +5,12 @@ public class Calculator {
         if(str.isEmpty())
             return 0;
 
-        String nums[] = splitString(str);
+        String delim = "";
+        if(str.startsWith("//")){
+            delim = str.substring(2, str.indexOf("\n"));
+            str = str.substring(str.indexOf("\n") + 1, str.length());
+        }
+        String nums[] = splitString(str, delim);
         String msg = findNeg(nums);
         if(!msg.isEmpty())
             throw new Exception(msg);
@@ -14,8 +19,8 @@ public class Calculator {
 
     private static int toInt(String str) { return Integer.parseInt(str); }
 
-    private static String[] splitString(String str){
-        return str.split("[,\\n]");
+    private static String[] splitString(String str, String delim){
+        return str.split("[,\\n" + delim + "]");
     }
 
     private static int sum(String[] nums){

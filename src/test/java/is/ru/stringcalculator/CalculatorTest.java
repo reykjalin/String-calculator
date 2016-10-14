@@ -45,4 +45,9 @@ public class CalculatorTest {
     public void thousandTest() throws Exception {
         assertEquals(3, Calculator.add("1,2,1001"));
     }
+
+    @Test
+    public void delimTest() throws Exception {
+        assertEquals(6, Calculator.add("//;\n1;2;3"));
+    }
 }

@@ -6,4 +6,7 @@ import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 
 public class CalculatorTest {
+    @Test
+    public void emptyTest(){
+    }
 }

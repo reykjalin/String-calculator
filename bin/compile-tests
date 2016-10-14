@@ -1,0 +1,4 @@
+#!/bin/bash
+[ -d classes ] || mkdir classes
+
+javac -cp "classes:lib/junit-4.11.jar:lib/hamcrest-core-1.3.jar" src/test/java/is/ru/stringcalculator/*.java -d classes

@@ -1,0 +1,4 @@
+#!/bin/bash
+[ -d classes ] || mkdir classes
+
+javac src/main/java/is/ru/stringcalculator/*.java -d classes

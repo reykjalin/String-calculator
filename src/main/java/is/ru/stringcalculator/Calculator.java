@@ -2,6 +2,9 @@ package is.ru.stringcalculator;
 
 public class Calculator {
     public static int add(String str){
-        return 0;
+        if(str.isEmpty())
+            return 0;
+        else
+            return Integer.parseInt(str);
     }
 }

@@ -15,4 +15,9 @@ public class CalculatorTest {
     public void oneNumTesT(){
         assertEquals(1, Calculator.add("1"));
     }
+
+    @Test
+    public void twoNumTest(){
+        assertEquals(3, Calculator.add("1,2"));
+    }
 }
